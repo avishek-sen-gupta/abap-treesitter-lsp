@@ -28,6 +28,13 @@
         ],
         "configuration": "./language-configuration.json"
       }
+    ],
+    "grammars": [
+      {
+        "language": "abap",
+        "scopeName": "source.abap",
+        "path": "./syntaxes/abap.tmLanguage.json"
+      }
     ]
   },
   "scripts": {
