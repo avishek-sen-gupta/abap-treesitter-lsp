@@ -1,0 +1,31 @@
+================================================================================
+Simple function
+================================================================================
+FUNCTION z_test_func.
+  EXIT.
+ENDFUNCTION.
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_implementation
+    (identifier)
+    (exit_statement)))
+
+================================================================================
+Function with multiple statements
+================================================================================
+FUNCTION z_process.
+  DATA lv_result TYPE string.
+  CLEAR lv_result.
+  RETURN.
+ENDFUNCTION.
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_implementation
+    (identifier)
+    (data_statement
+      (identifier))
+    (clear_statement
+      (identifier))
+    (return_statement)))

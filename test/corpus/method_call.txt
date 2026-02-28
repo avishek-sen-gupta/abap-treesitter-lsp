@@ -1,0 +1,95 @@
+================================================================================
+Functional method call
+================================================================================
+lv_result = obj->get_name( ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (method_call_expression
+      (component_access
+        (identifier)
+        (identifier))
+      (argument_list))))
+
+================================================================================
+Static method call
+================================================================================
+lv_result = zcl_util=>get_instance( ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (method_call_expression
+      (component_access
+        (identifier)
+        (identifier))
+      (argument_list))))
+
+================================================================================
+Method call with named arguments (comma-separated)
+================================================================================
+obj->set_data( iv_name = 'test', iv_age = 25 ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (method_call_expression
+    (component_access
+      (identifier)
+      (identifier))
+    (argument_list
+      (named_argument
+        (identifier)
+        (string_literal))
+      (named_argument
+        (identifier)
+        (number_literal
+          (integer_literal))))))
+
+================================================================================
+Chained method call
+================================================================================
+lo_obj->method1( )->method2( ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (method_call_expression
+    (component_access
+      (method_call_expression
+        (component_access
+          (identifier)
+          (identifier))
+        (argument_list))
+      (identifier))
+    (argument_list)))
+
+================================================================================
+CALL METHOD (obsolete)
+================================================================================
+CALL METHOD obj->do_something EXPORTING iv_val = lv_val.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_method_statement
+    (component_access
+      (identifier)
+      (identifier))
+    (named_argument
+      (identifier)
+      (identifier))))
+
+================================================================================
+Simple function call
+================================================================================
+lv_len = strlen( lv_text ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (method_call_expression
+      (identifier)
+      (argument_list
+        (identifier)))))

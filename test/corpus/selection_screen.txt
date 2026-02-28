@@ -1,0 +1,69 @@
+================================================================================
+SELECTION-SCREEN block
+================================================================================
+SELECTION-SCREEN BEGIN OF BLOCK blk WITH FRAME TITLE text001.
+SELECTION-SCREEN END OF BLOCK blk.
+--------------------------------------------------------------------------------
+
+(source_file
+  (selection_screen_statement
+    (identifier)
+    (identifier))
+  (selection_screen_statement
+    (identifier)))
+
+================================================================================
+SELECTION-SCREEN skip
+================================================================================
+SELECTION-SCREEN SKIP 2.
+--------------------------------------------------------------------------------
+
+(source_file
+  (selection_screen_statement
+    (number_literal
+      (integer_literal))))
+
+================================================================================
+PARAMETERS
+================================================================================
+PARAMETERS p_name TYPE string DEFAULT 'test' OBLIGATORY.
+--------------------------------------------------------------------------------
+
+(source_file
+  (parameters_statement
+    (identifier)
+    (string_literal)))
+
+================================================================================
+PARAMETERS as checkbox
+================================================================================
+PARAMETERS p_flag AS CHECKBOX DEFAULT 'X'.
+--------------------------------------------------------------------------------
+
+(source_file
+  (parameters_statement
+    (identifier)
+    (string_literal)))
+
+================================================================================
+SELECT-OPTIONS
+================================================================================
+SELECT-OPTIONS s_matnr FOR lv_matnr.
+--------------------------------------------------------------------------------
+
+(source_file
+  (select_options_statement
+    (identifier)
+    (identifier)))
+
+================================================================================
+PARAMETERS radiobutton group
+================================================================================
+PARAMETERS p_opt1 RADIOBUTTON GROUP grp1 DEFAULT 'X'.
+--------------------------------------------------------------------------------
+
+(source_file
+  (parameters_statement
+    (identifier)
+    (identifier)
+    (string_literal)))

@@ -1,0 +1,60 @@
+================================================================================
+Simple interface
+================================================================================
+INTERFACE zif_test.
+ENDINTERFACE.
+--------------------------------------------------------------------------------
+
+(source_file
+  (interface_definition
+    (identifier)))
+
+================================================================================
+Interface with methods
+================================================================================
+INTERFACE zif_test.
+  METHODS do_something IMPORTING iv_val TYPE i.
+  METHODS get_result RETURNING VALUE(rv_result) TYPE string.
+ENDINTERFACE.
+--------------------------------------------------------------------------------
+
+(source_file
+  (interface_definition
+    (identifier)
+    (method_statement
+      (identifier)
+      (method_importing
+        (method_param
+          (identifier))))
+    (method_statement
+      (identifier)
+      (method_returning
+        (identifier)))))
+
+================================================================================
+Interface with data and events
+================================================================================
+INTERFACE zif_test.
+  DATA mv_count TYPE i.
+  EVENTS data_changed.
+ENDINTERFACE.
+--------------------------------------------------------------------------------
+
+(source_file
+  (interface_definition
+    (identifier)
+    (data_statement
+      (identifier))
+    (events_statement
+      (identifier))))
+
+================================================================================
+Deferred interface
+================================================================================
+INTERFACE zif_test DEFERRED.
+ENDINTERFACE.
+--------------------------------------------------------------------------------
+
+(source_file
+  (interface_definition
+    (identifier)))

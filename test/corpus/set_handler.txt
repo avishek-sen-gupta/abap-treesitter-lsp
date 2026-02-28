@@ -1,0 +1,24 @@
+================================================================================
+SET HANDLER simple
+================================================================================
+SET HANDLER lo_handler->on_click FOR lo_button.
+--------------------------------------------------------------------------------
+
+(source_file
+  (set_handler_statement
+    (component_access
+      (identifier)
+      (identifier))
+    (identifier)))
+
+================================================================================
+SET HANDLER for ALL INSTANCES
+================================================================================
+SET HANDLER lo_handler->on_change FOR ALL INSTANCES.
+--------------------------------------------------------------------------------
+
+(source_file
+  (set_handler_statement
+    (component_access
+      (identifier)
+      (identifier))))

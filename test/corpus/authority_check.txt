@@ -1,0 +1,24 @@
+================================================================================
+AUTHORITY-CHECK basic
+================================================================================
+AUTHORITY-CHECK OBJECT 'S_TCODE' ID 'TCD' FIELD lv_tcode.
+--------------------------------------------------------------------------------
+
+(source_file
+  (authority_check_statement
+    (string_literal)
+    (string_literal)
+    (identifier)))
+
+================================================================================
+AUTHORITY-CHECK with DUMMY
+================================================================================
+AUTHORITY-CHECK OBJECT 'S_DEVELOP' ID 'DEVCLASS' DUMMY ID 'OBJTYPE' FIELD 'PROG'.
+--------------------------------------------------------------------------------
+
+(source_file
+  (authority_check_statement
+    (string_literal)
+    (string_literal)
+    (string_literal)
+    (string_literal)))

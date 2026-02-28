@@ -1,0 +1,21 @@
+================================================================================
+CASE TYPE OF
+================================================================================
+CASE TYPE OF lo_exception.
+  WHEN TYPE cx_root INTO DATA(lx_root).
+    EXIT.
+  WHEN OTHERS.
+    RETURN.
+ENDCASE.
+--------------------------------------------------------------------------------
+
+(source_file
+  (case_type_statement
+    (identifier)
+    (when_type_clause
+      (identifier)
+      (inline_data_declaration
+        (identifier))
+      (exit_statement))
+    (when_others_clause
+      (return_statement))))

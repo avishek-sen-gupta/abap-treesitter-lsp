@@ -1,0 +1,57 @@
+================================================================================
+Simple CALL FUNCTION
+================================================================================
+CALL FUNCTION 'Z_TEST_FUNC'.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_function_statement
+    (string_literal)))
+
+================================================================================
+CALL FUNCTION with parameters
+================================================================================
+CALL FUNCTION 'Z_TEST_FUNC' EXPORTING iv_name = lv_name IMPORTING ev_result = lv_result EXCEPTIONS error = 1 OTHERS = 2.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_function_statement
+    (string_literal)
+    (named_argument
+      (identifier)
+      (identifier))
+    (named_argument
+      (identifier)
+      (identifier))
+    (identifier)
+    (number_literal
+      (integer_literal))
+    (number_literal
+      (integer_literal))))
+
+================================================================================
+CALL FUNCTION IN UPDATE TASK
+================================================================================
+CALL FUNCTION 'Z_UPDATE' IN UPDATE TASK EXPORTING iv_data = ls_data.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_function_statement
+    (string_literal)
+    (named_argument
+      (identifier)
+      (identifier))))
+
+================================================================================
+CALL FUNCTION with DESTINATION
+================================================================================
+CALL FUNCTION 'Z_REMOTE_FUNC' DESTINATION lv_dest EXPORTING iv_val = lv_val.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_function_statement
+    (string_literal)
+    (identifier)
+    (named_argument
+      (identifier)
+      (identifier))))

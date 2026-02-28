@@ -1,0 +1,49 @@
+================================================================================
+Simple CALL TRANSACTION
+================================================================================
+CALL TRANSACTION 'SE80'.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_transaction_statement
+    (string_literal)))
+
+================================================================================
+CALL TRANSACTION AND SKIP FIRST SCREEN
+================================================================================
+CALL TRANSACTION 'SE80' AND SKIP FIRST SCREEN.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_transaction_statement
+    (string_literal)))
+
+================================================================================
+CALL SCREEN
+================================================================================
+CALL SCREEN 100.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_screen_statement
+    (number_literal
+      (integer_literal))))
+
+================================================================================
+CALL SCREEN with STARTING AT
+================================================================================
+CALL SCREEN 100 STARTING AT 10 5 ENDING AT 80 25.
+--------------------------------------------------------------------------------
+
+(source_file
+  (call_screen_statement
+    (number_literal
+      (integer_literal))
+    (number_literal
+      (integer_literal))
+    (number_literal
+      (integer_literal))
+    (number_literal
+      (integer_literal))
+    (number_literal
+      (integer_literal))))

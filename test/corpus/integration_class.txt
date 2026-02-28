@@ -1,0 +1,77 @@
+================================================================================
+Full class with interface implementation
+================================================================================
+INTERFACE zif_nameable.
+  METHODS get_name RETURNING VALUE(rv_name) TYPE string.
+ENDINTERFACE.
+
+CLASS zcl_person DEFINITION FINAL CREATE PRIVATE.
+  PUBLIC SECTION.
+    INTERFACES zif_nameable.
+    CLASS-METHODS create IMPORTING iv_name TYPE string RETURNING VALUE(ro_person) TYPE REF TO zcl_person.
+    DATA mv_name TYPE string READ-ONLY.
+  PRIVATE SECTION.
+    METHODS constructor IMPORTING iv_name TYPE string.
+ENDCLASS.
+
+CLASS zcl_person IMPLEMENTATION.
+  METHOD create.
+    CREATE OBJECT ro_person TYPE zcl_person EXPORTING iv_name = iv_name.
+  ENDMETHOD.
+  METHOD constructor.
+    mv_name = iv_name.
+  ENDMETHOD.
+  METHOD get_name.
+    rv_name = mv_name.
+  ENDMETHOD.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (interface_definition
+    (identifier)
+    (method_statement
+      (identifier)
+      (method_returning
+        (identifier))))
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (interface_def_statement
+      (identifier))
+    (method_statement
+      (identifier)
+      (method_importing
+        (method_param
+          (identifier)))
+      (method_returning
+        (identifier)
+        (identifier)))
+    (data_statement
+      (identifier))
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (method_importing
+        (method_param
+          (identifier)))))
+  (class_implementation
+    (identifier)
+    (method_implementation
+      (identifier)
+      (create_object_statement
+        (identifier)
+        (identifier)
+        (named_argument
+          (identifier)
+          (identifier))))
+    (method_implementation
+      (identifier)
+      (binary_expression
+        (identifier)
+        (identifier)))
+    (method_implementation
+      (identifier)
+      (binary_expression
+        (identifier)
+        (identifier)))))

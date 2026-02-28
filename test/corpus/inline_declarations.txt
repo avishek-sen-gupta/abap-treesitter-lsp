@@ -1,0 +1,66 @@
+================================================================================
+Inline DATA in assignment
+================================================================================
+DATA(lv_text) = 'hello'.
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (inline_data_declaration
+      (identifier))
+    (string_literal)))
+
+================================================================================
+Inline DATA in LOOP
+================================================================================
+LOOP AT lt_data INTO DATA(ls_line).
+ENDLOOP.
+--------------------------------------------------------------------------------
+
+(source_file
+  (loop_statement
+    (identifier)
+    (inline_data_declaration
+      (identifier))))
+
+================================================================================
+Inline FIELD-SYMBOL in LOOP
+================================================================================
+LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<ls_line>).
+ENDLOOP.
+--------------------------------------------------------------------------------
+
+(source_file
+  (loop_statement
+    (identifier)
+    (inline_field_symbol
+      (field_symbol))))
+
+================================================================================
+Inline DATA in CATCH
+================================================================================
+TRY.
+  CATCH cx_root INTO DATA(lx_err).
+ENDTRY.
+--------------------------------------------------------------------------------
+
+(source_file
+  (try_statement
+    (catch_clause
+      (identifier)
+      (inline_data_declaration
+        (identifier)))))
+
+================================================================================
+Inline DATA in READ TABLE
+================================================================================
+READ TABLE lt_data INTO DATA(ls_result) INDEX 1.
+--------------------------------------------------------------------------------
+
+(source_file
+  (read_table_statement
+    (identifier)
+    (inline_data_declaration
+      (identifier))
+    (number_literal
+      (integer_literal))))
