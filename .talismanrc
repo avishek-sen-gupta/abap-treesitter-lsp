@@ -3,3 +3,7 @@ fileignoreconfig:
   checksum: 22f72f94885c621844a0742108bc8f1b6382a4e2bdd14874b2f71b44dbf99a9e
 - filename: test/corpus/sql_statements.txt
   checksum: 8a3c5cad2f447cbbe978e4db05a07a87ecc93ab7363436b3bc75f3999290a5e0
+- filename: abap-lsp/poetry.lock
+  checksum: 1bf6b440a675e7a14a7275ccca2dd986a837267f027526ee6ba863fa8a8fc8d6
+- filename: editors/vscode/package-lock.json
+  checksum: dbfe22c05c41f17db7ad1c17b888e6132cc157b04118ea7756ec0fa5d6285fd5

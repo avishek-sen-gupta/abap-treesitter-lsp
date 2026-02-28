@@ -12,3 +12,14 @@ target/
 *.so
 *.dylib
 .claude/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+
+# VS Code extension
+editors/vscode/out/
+editors/vscode/.vscode/
