@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "abap-lsp"
+version = "0.1.0"
+description = "Language Server Protocol implementation for ABAP"
+packages = [{include = "abap_lsp"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+pygls = ">=1.3"
+tree-sitter = ">=0.23"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.0"
+
+[tool.poetry.scripts]
+abap-lsp = "abap_lsp.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

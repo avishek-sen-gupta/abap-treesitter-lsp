@@ -1,0 +1,46 @@
+{
+  "name": "abap-lsp",
+  "displayName": "ABAP Language Support",
+  "description": "Language support for ABAP powered by tree-sitter",
+  "version": "0.1.0",
+  "publisher": "abap-treesitter",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:abap"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "abap",
+        "aliases": [
+          "ABAP",
+          "abap"
+        ],
+        "extensions": [
+          ".abap",
+          ".abap.txt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
