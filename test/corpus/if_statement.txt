@@ -1,0 +1,42 @@
+================================================================================
+Simple IF
+================================================================================
+IF a = b.
+  RETURN.
+ENDIF.
+--------------------------------------------------------------------------------
+
+(source_file
+  (if_statement
+    (binary_expression
+      (identifier)
+      (identifier))
+    (return_statement)))
+
+================================================================================
+IF with ELSEIF and ELSE
+================================================================================
+IF a = 1.
+  EXIT.
+ELSEIF a = 2.
+  CONTINUE.
+ELSE.
+  RETURN.
+ENDIF.
+--------------------------------------------------------------------------------
+
+(source_file
+  (if_statement
+    (binary_expression
+      (identifier)
+      (number_literal
+        (integer_literal)))
+    (exit_statement)
+    (elseif_clause
+      (binary_expression
+        (identifier)
+        (number_literal
+          (integer_literal)))
+      (continue_statement))
+    (else_clause
+      (return_statement))))

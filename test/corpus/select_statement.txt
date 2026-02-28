@@ -1,0 +1,14 @@
+================================================================================
+Simple SELECT SINGLE
+================================================================================
+SELECT SINGLE matnr FROM mara INTO lv_matnr WHERE matnr = lv_input.
+--------------------------------------------------------------------------------
+
+(source_file
+  (select_statement
+    (identifier)
+    (identifier)
+    (identifier)
+    (binary_expression
+      (identifier)
+      (identifier))))

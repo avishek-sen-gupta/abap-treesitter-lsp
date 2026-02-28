@@ -1,0 +1,172 @@
+================================================================================
+Simple method declaration
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS do_something.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier))))
+
+================================================================================
+Method with IMPORTING
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS set_name IMPORTING iv_name TYPE string.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (method_importing
+        (method_param
+          (identifier))))))
+
+================================================================================
+Method with RETURNING
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS get_name RETURNING VALUE(rv_name) TYPE string.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (method_returning
+        (identifier)))))
+
+================================================================================
+Method with multiple parameter types
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS process IMPORTING iv_input TYPE string EXPORTING ev_output TYPE string CHANGING cv_count TYPE i RAISING cx_error.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (method_importing
+        (method_param
+          (identifier)))
+      (method_exporting
+        (method_param
+          (identifier)))
+      (method_changing
+        (method_param
+          (identifier)))
+      (method_raising
+        (identifier)))))
+
+================================================================================
+Abstract method
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS do_something ABSTRACT.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier))))
+
+================================================================================
+Redefined method
+================================================================================
+CLASS zcl_child DEFINITION INHERITING FROM zcl_parent.
+  PUBLIC SECTION.
+    METHODS do_something REDEFINITION.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier))))
+
+================================================================================
+CLASS-METHODS (static)
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    CLASS-METHODS create RETURNING VALUE(ro_instance) TYPE REF TO zcl_test.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (method_returning
+        (identifier)
+        (identifier)))))
+
+================================================================================
+Method with OPTIONAL parameter
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS process IMPORTING iv_name TYPE string OPTIONAL iv_id TYPE i DEFAULT 0.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (method_importing
+        (method_param
+          (identifier))
+        (method_param
+          (identifier)
+          (number_literal
+            (integer_literal)))))))
+
+================================================================================
+Method FOR EVENT
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    METHODS on_click FOR EVENT click OF zcl_button.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (method_statement
+      (identifier)
+      (identifier)
+      (identifier))))

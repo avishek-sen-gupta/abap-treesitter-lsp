@@ -1,0 +1,17 @@
+================================================================================
+Simple TRY/CATCH
+================================================================================
+TRY.
+    EXIT.
+  CATCH cx_root INTO lx_error.
+    RETURN.
+ENDTRY.
+--------------------------------------------------------------------------------
+
+(source_file
+  (try_statement
+    (exit_statement)
+    (catch_clause
+      (identifier)
+      (identifier)
+      (return_statement))))

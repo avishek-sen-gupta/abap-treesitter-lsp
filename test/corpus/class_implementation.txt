@@ -1,0 +1,16 @@
+================================================================================
+Simple class implementation
+================================================================================
+CLASS zcl_test IMPLEMENTATION.
+  METHOD my_method.
+    RETURN.
+  ENDMETHOD.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_implementation
+    (identifier)
+    (method_implementation
+      (identifier)
+      (return_statement))))

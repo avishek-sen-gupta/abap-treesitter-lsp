@@ -1,0 +1,159 @@
+================================================================================
+NEW expression
+================================================================================
+DATA(lo_obj) = NEW zcl_class( iv_name = 'test' ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (inline_data_declaration
+      (identifier))
+    (new_expression
+      (identifier)
+      (named_argument
+        (identifier)
+        (string_literal)))))
+
+================================================================================
+VALUE expression with structure
+================================================================================
+ls_data = VALUE #( name = 'test' age = 25 ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (value_expression
+      (named_argument
+        (identifier)
+        (string_literal))
+      (named_argument
+        (identifier)
+        (number_literal
+          (integer_literal))))))
+
+================================================================================
+VALUE expression with table lines
+================================================================================
+lt_data = VALUE #( ( name = 'a' ) ( name = 'b' ) ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (value_expression
+      (value_line
+        (named_argument
+          (identifier)
+          (string_literal)))
+      (value_line
+        (named_argument
+          (identifier)
+          (string_literal))))))
+
+================================================================================
+CONV expression
+================================================================================
+lv_str = CONV string( lv_int ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (conv_expression
+      (identifier)
+      (identifier))))
+
+================================================================================
+CAST expression
+================================================================================
+lo_ref = CAST zcl_class( lo_other ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (cast_expression
+      (identifier)
+      (identifier))))
+
+================================================================================
+REF expression
+================================================================================
+lr_data = REF #( ls_data ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (ref_expression
+      (identifier))))
+
+================================================================================
+COND expression
+================================================================================
+lv_result = COND #( WHEN lv_a > 0 THEN 'pos' ELSE 'neg' ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (cond_expression
+      (cond_branch
+        (binary_expression
+          (identifier)
+          (number_literal
+            (integer_literal)))
+        (string_literal))
+      (cond_branch
+        (string_literal)))))
+
+================================================================================
+SWITCH expression
+================================================================================
+lv_text = SWITCH #( lv_type WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'other' ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (switch_expression
+      (identifier)
+      (switch_branch
+        (number_literal
+          (integer_literal))
+        (string_literal))
+      (switch_branch
+        (number_literal
+          (integer_literal))
+        (string_literal))
+      (switch_branch
+        (string_literal)))))
+
+================================================================================
+CORRESPONDING expression
+================================================================================
+ls_target = CORRESPONDING #( ls_source ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (corresponding_expression
+      (identifier))))
+
+================================================================================
+FILTER expression
+================================================================================
+lt_result = FILTER #( lt_data WHERE status = 'A' ).
+--------------------------------------------------------------------------------
+
+(source_file
+  (binary_expression
+    (identifier)
+    (filter_expression
+      (identifier)
+      (filter_where
+        (binary_expression
+          (identifier)
+          (string_literal))))))

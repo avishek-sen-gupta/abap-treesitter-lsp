@@ -1,0 +1,12 @@
+================================================================================
+Known statements parse correctly around errors
+================================================================================
+DATA lv_ok TYPE string.
+DATA lv_also_ok TYPE i.
+--------------------------------------------------------------------------------
+
+(source_file
+  (data_statement
+    (identifier))
+  (data_statement
+    (identifier)))

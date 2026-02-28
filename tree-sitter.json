@@ -1,0 +1,29 @@
+{
+  "grammars": [
+    {
+      "name": "abap",
+      "camelcase": "ABAP",
+      "scope": "source.abap",
+      "path": ".",
+      "file-types": [
+        "abap"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for the ABAP programming language",
+    "links": {
+      "repository": "https://github.com/user/tree-sitter-abap"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}

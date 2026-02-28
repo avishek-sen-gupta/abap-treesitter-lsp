@@ -1,0 +1,61 @@
+================================================================================
+Full ABAP program
+================================================================================
+REPORT ztest_program.
+* Program comment
+DATA lv_name TYPE string.
+DATA lt_data TYPE STANDARD TABLE OF string WITH DEFAULT KEY.
+CONSTANTS gc_max TYPE i VALUE 100.
+FIELD-SYMBOLS <ls_data> TYPE string.
+IF lv_name IS INITIAL.
+  CLEAR lv_name.
+ENDIF.
+LOOP AT lt_data ASSIGNING <ls_data>.
+  EXIT.
+ENDLOOP.
+TRY.
+    RETURN.
+  CATCH cx_root INTO DATA(lx_error).
+    MESSAGE 'Error' TYPE 'E'.
+ENDTRY.
+DO 5 TIMES.
+  CONTINUE.
+ENDDO.
+--------------------------------------------------------------------------------
+
+(source_file
+  (report_statement
+    (identifier))
+  (line_comment)
+  (data_statement
+    (identifier))
+  (data_statement
+    (identifier))
+  (constants_statement
+    (identifier)
+    (number_literal
+      (integer_literal)))
+  (field_symbols_statement
+    (field_symbol))
+  (if_statement
+    (predicate_expression
+      (identifier))
+    (clear_statement
+      (identifier)))
+  (loop_statement
+    (identifier)
+    (field_symbol)
+    (exit_statement))
+  (try_statement
+    (return_statement)
+    (catch_clause
+      (identifier)
+      (inline_data_declaration
+        (identifier))
+      (message_statement
+        (string_literal)
+        (string_literal))))
+  (do_statement
+    (number_literal
+      (integer_literal))
+    (continue_statement)))

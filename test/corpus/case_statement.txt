@@ -1,0 +1,26 @@
+================================================================================
+Simple CASE
+================================================================================
+CASE lv_val.
+  WHEN 1.
+    EXIT.
+  WHEN 2.
+    RETURN.
+  WHEN OTHERS.
+    CONTINUE.
+ENDCASE.
+--------------------------------------------------------------------------------
+
+(source_file
+  (case_statement
+    (identifier)
+    (when_clause
+      (number_literal
+        (integer_literal))
+      (exit_statement))
+    (when_clause
+      (number_literal
+        (integer_literal))
+      (return_statement))
+    (when_others_clause
+      (continue_statement))))

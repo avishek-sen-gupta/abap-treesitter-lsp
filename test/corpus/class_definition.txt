@@ -1,0 +1,43 @@
+================================================================================
+Simple class definition
+================================================================================
+CLASS zcl_test DEFINITION.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)))
+
+================================================================================
+Class with inheritance
+================================================================================
+CLASS zcl_child DEFINITION INHERITING FROM zcl_parent FINAL.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (identifier)))
+
+================================================================================
+Class with visibility sections and data
+================================================================================
+CLASS zcl_test DEFINITION.
+  PUBLIC SECTION.
+    DATA mv_name TYPE string.
+  PRIVATE SECTION.
+    DATA mv_id TYPE i.
+ENDCLASS.
+--------------------------------------------------------------------------------
+
+(source_file
+  (class_definition
+    (identifier)
+    (visibility_section)
+    (data_statement
+      (identifier))
+    (visibility_section)
+    (data_statement
+      (identifier))))
