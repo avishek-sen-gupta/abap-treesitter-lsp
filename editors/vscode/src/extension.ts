@@ -9,17 +9,24 @@ import {
 let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
+  const serverCwd = path.resolve(__dirname, "..", "..", "..", "abap-lsp");
   const pythonPath =
-    workspace.getConfiguration("abapLsp").get<string>("pythonPath") ||
-    "python3";
+    workspace.getConfiguration("abapLsp").get<string>("pythonPath") || "";
 
-  const serverOptions: ServerOptions = {
-    command: pythonPath,
-    args: ["-m", "abap_lsp"],
-    options: {
-      cwd: path.resolve(__dirname, "..", "..", "..", "abap-lsp"),
-    },
-  };
+  let serverOptions: ServerOptions;
+  if (pythonPath) {
+    serverOptions = {
+      command: pythonPath,
+      args: ["-m", "abap_lsp"],
+      options: { cwd: serverCwd },
+    };
+  } else {
+    serverOptions = {
+      command: "poetry",
+      args: ["run", "python", "-m", "abap_lsp"],
+      options: { cwd: serverCwd },
+    };
+  }
 
   const clientOptions: LanguageClientOptions = {
     documentSelector: [{ scheme: "file", language: "abap" }],
